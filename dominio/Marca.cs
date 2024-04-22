@@ -9,6 +9,6 @@ namespace dominio
     internal class Marca
     {
         public int IDMarca { get; set; }
-        public string Nombre { get; set; }
+        public string NombreMarca { get; set; }
     }
 }
