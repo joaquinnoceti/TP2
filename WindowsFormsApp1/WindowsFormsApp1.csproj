@@ -52,7 +52,6 @@
     <Compile Include="AgregarElemento.Designer.cs">
       <DependentUpon>AgregarElemento.cs</DependentUpon>
     </Compile>
-    <Compile Include="Articulo.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +96,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dominio\dominio.csproj">
+      <Project>{9eda086c-9190-42e8-a7ce-7cd9905fa819}</Project>
+      <Name>dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\negocio\negocio.csproj">
+      <Project>{b7ecdd44-dbd4-44a7-8ec5-2e9b8d7dccf2}</Project>
+      <Name>negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
