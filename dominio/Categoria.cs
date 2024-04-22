@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp1
+namespace dominio
 {
-    internal class Marca
+    internal class Categoria
     {
-        public int IDMarca { get; set; }
+        public int IDCategoria { get; set; }
         public string Nombre { get; set; }
     }
 }
