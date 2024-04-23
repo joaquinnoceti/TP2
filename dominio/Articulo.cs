@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace dominio
 {
-    class Articulo
-    {
-        public int CodArticulo { get; set; }
+    public class Articulo
+    {   
+        public int ID { get; set; }
+        public string CodArticulo { get; set; }
         public string NombreArticulo { get; set; }
         public string Descripcion { get; set; }
         public Marca IDMarca { get; set; }
         public Categoria IDCategoria { get; set; }
-        public string Imagen { get; set; }
-        public float Precio { get; set; }
+        public string ImagenUrl { get; set; }
+        public decimal Precio { get; set; }
 
     }
 }
