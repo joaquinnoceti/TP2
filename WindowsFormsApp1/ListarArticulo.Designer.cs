@@ -28,33 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.dgvListArticulos = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListArticulos)).BeginInit();
             this.SuspendLayout();
             // 
-            // listView1
+            // dgvListArticulos
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(25, 39);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(701, 338);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.dgvListArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListArticulos.Location = new System.Drawing.Point(144, 101);
+            this.dgvListArticulos.Name = "dgvListArticulos";
+            this.dgvListArticulos.RowHeadersWidth = 51;
+            this.dgvListArticulos.RowTemplate.Height = 24;
+            this.dgvListArticulos.Size = new System.Drawing.Size(505, 223);
+            this.dgvListArticulos.TabIndex = 0;
             // 
             // ListarArticulo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 422);
-            this.Controls.Add(this.listView1);
+            this.ClientSize = new System.Drawing.Size(1269, 519);
+            this.Controls.Add(this.dgvListArticulos);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ListarArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ListarArticulo";
+            this.Load += new System.EventHandler(this.ListarArticulo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListArticulos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.DataGridView dgvListArticulos;
     }
 }

@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace dominio
+
 {
+
     public class Articulo
     {   
         public int ID { get; set; }

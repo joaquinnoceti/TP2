@@ -11,7 +11,7 @@ using dominio;
 
 namespace negocio
 {
-    internal class ArticuloNegocio
+    public class ArticuloNegocio
     {
        public List<Articulo> Listar()
         {
