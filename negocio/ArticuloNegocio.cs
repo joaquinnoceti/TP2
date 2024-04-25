@@ -35,12 +35,12 @@ namespace negocio
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
                     if (!(datos.Lector["ImagenUrl"] is DBNull))
                         aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
-                    aux.IDMarca = new Marca();
+                    aux.Marca = new Marca();
                     //aux.IDMarca.IDMarca= (int)datos.Lector["IdMarca"];
-                    aux.IDMarca.NombreMarca = (string)datos.Lector["Marca"];
-                    aux.IDCategoria = new Categoria();
+                    aux.Marca.NombreMarca = (string)datos.Lector["Marca"];
+                    aux.Categoria = new Categoria();
                     //aux.IDCategoria.IDCategoria = (int)datos.Lector["IdCategoria"];
-                    aux.IDCategoria.NombreCategoria = (string)datos.Lector["Categoria"];
+                    aux.Categoria.NombreCategoria = (string)datos.Lector["Categoria"];
 
 
                     lista.Add(aux);
