@@ -41,7 +41,7 @@ namespace WindowsFormsApp1
 
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            this.Close();
         }
     }
 }

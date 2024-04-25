@@ -42,5 +42,10 @@ namespace WindowsFormsApp1
             
             ventana.ShowDialog();
         }
+
+        private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
