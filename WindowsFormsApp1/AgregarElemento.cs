@@ -39,12 +39,29 @@ namespace WindowsFormsApp1
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            string codArt = txtCodArt.Text;
-            string NombreArt = txtNombreArt.Text;
-            string descr = txtDescripcion.Text;
-            string marcaArt = cboxMarca.Text;
-            string catArt = cboxCategoria.Text;
-            float precio = float.Parse(txtPrecio.Text);
+            Articulo art = new Articulo();
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            try
+            {
+                art.CodArticulo = txtCodArt.Text;
+                art.NombreArticulo = txtNombreArt.Text;
+                art.Descripcion = txtDescripcion.Text;
+                art.Marca = (Marca)cboxMarca.SelectedItem;
+                art.Categoria = (Categoria)cboxCategoria.SelectedItem;
+
+                negocio.agregar(art);
+                MessageBox.Show("Agregado correctamente");
+                Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
+
+
         }
 
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)

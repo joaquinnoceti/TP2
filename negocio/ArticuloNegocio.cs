@@ -13,8 +13,8 @@ namespace negocio
 {
     public class ArticuloNegocio
     {
-       public List<Articulo> Listar()
-        {
+        public List<Articulo> Listar()
+       {
             List<Articulo> lista = new List<Articulo>();
             AccesoDatos datos = new AccesoDatos();
 
@@ -61,6 +61,27 @@ namespace negocio
 
             }
 
+       }
+
+        public void agregar(Articulo nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("INSERT INTO ARTICULOS(Codigo,Nombre,Descripcion,IdMarca,IdCategoria,Precio)VALUES('" + nuevo.CodArticulo + "','" + nuevo.NombreArticulo + "','" + nuevo.Descripcion + "','" + nuevo.Marca.IDMarca + "','" + nuevo.Categoria.IDCategoria + "','" + nuevo.Precio +"')");
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally 
+            { 
+                datos.cerrarConexion(); 
+            }
         }
     }
+
 }
