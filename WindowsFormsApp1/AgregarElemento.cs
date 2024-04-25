@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using negocio;
+using dominio;
 
 namespace WindowsFormsApp1
 {
@@ -20,13 +21,20 @@ namespace WindowsFormsApp1
 
         private void AgregarElemento_Load(object sender, EventArgs e)
         {
-            cboxCategoria.Items.Add("Eletrodomestico");
-            cboxCategoria.Items.Add("Vehiculo");
-            cboxCategoria.Items.Add("Insumos");
+            CategoriaNegocio cat = new CategoriaNegocio();
+            MarcaNegocio marca = new MarcaNegocio();
 
-            cboxMarca.Items.Add("Honda");
-            cboxMarca.Items.Add("Daiatsu");
-            cboxMarca.Items.Add("Marolio");
+            try
+            {
+                cboxCategoria.DataSource = cat.listarCategorias();
+                cboxMarca.DataSource = marca.listarMarcas();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
