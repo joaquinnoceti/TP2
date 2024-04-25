@@ -43,5 +43,13 @@ namespace WindowsFormsApp1
         {
             this.Close();
         }
+
+        private void listarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListarArticulo ventana = new ListarArticulo();
+
+            ventana.ShowDialog();
+            this.Close();
+        }
     }
 }

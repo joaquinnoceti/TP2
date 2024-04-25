@@ -47,5 +47,10 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
