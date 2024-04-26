@@ -30,7 +30,7 @@ namespace WindowsFormsApp1
             {
                 listaArticulos = negocio.Listar();
                 dgvListArticulos.DataSource = listaArticulos;
-                //dgvListArticulos.Columns["ImagenUrl"].Visible = false;
+                dgvListArticulos.Columns["ImagenUrl"].Visible = false;
                 pbArticulo.Load(listaArticulos[0].ImagenUrl);
             }
             catch (Exception ex)
