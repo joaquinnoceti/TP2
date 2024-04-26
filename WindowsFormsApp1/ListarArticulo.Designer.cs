@@ -117,13 +117,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 422);
+            this.ClientSize = new System.Drawing.Size(810, 422);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblAgregar);
             this.Controls.Add(this.lblEliminar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.pbArticulo);
             this.Controls.Add(this.dgvListArticulos);
+            this.MinimumSize = new System.Drawing.Size(826, 461);
             this.Name = "ListarArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ListarArticulo";

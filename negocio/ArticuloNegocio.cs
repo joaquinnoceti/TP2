@@ -83,6 +83,25 @@ namespace negocio
             }
         }
 
+        public void agregarImagen(Articulo art)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("INSERT INTO IMAGENES(IdArticulo,ImagenUrl)VALUES('" + art.ID + "','" + art.ImagenUrl + "')");
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
         public void eliminar(Articulo art)
         {
             AccesoDatos datos = new AccesoDatos();

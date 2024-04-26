@@ -50,11 +50,13 @@ namespace WindowsFormsApp1
                 art.CodArticulo = txtCodArt.Text;
                 art.NombreArticulo = txtNombreArt.Text;
                 art.Descripcion = txtDescripcion.Text;
+                art.ImagenUrl = tbxUrlImagen.Text;
                 art.Marca = (Marca)cboxMarca.SelectedItem;
                 art.Categoria = (Categoria)cboxCategoria.SelectedItem;
                 art.Precio = decimal.Parse(txtPrecio.Text);
 
                 negocio.agregar(art);
+                negocio.agregarImagen(art);
                 MessageBox.Show("Agregado correctamente");
                 Close();
 
@@ -86,5 +88,27 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tbxUrlImagen_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(tbxUrlImagen.Text);
+        }
+            private void cargarImagen(string imagen)
+            {
+                try
+                {
+                    pbxArticulo.Load(imagen);
+                }
+                catch (Exception ex)
+                {
+
+                    pbxArticulo.Load("https://www.shutterstock.com/image-vector/ui-image-placeholder-wireframes-apps-260nw-1037719204.jpg");
+                }
+            }
     }
 }
