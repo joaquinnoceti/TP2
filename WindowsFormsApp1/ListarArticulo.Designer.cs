@@ -32,6 +32,8 @@
             this.pbArticulo = new System.Windows.Forms.PictureBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblEliminar = new System.Windows.Forms.Label();
+            this.lblAgregar = new System.Windows.Forms.Label();
+            this.btnAgregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).BeginInit();
             this.SuspendLayout();
@@ -40,7 +42,7 @@
             // 
             this.dgvListArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvListArticulos.Location = new System.Drawing.Point(20, 53);
+            this.dgvListArticulos.Location = new System.Drawing.Point(23, 53);
             this.dgvListArticulos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvListArticulos.MultiSelect = false;
             this.dgvListArticulos.Name = "dgvListArticulos";
@@ -70,7 +72,7 @@
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.Control;
             this.btnEliminar.Location = new System.Drawing.Point(149, 311);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(99, 38);
+            this.btnEliminar.Size = new System.Drawing.Size(122, 38);
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -87,11 +89,37 @@
             this.lblEliminar.TabIndex = 3;
             this.lblEliminar.Text = "Eliminar Seleccionado ->";
             // 
+            // lblAgregar
+            // 
+            this.lblAgregar.AutoSize = true;
+            this.lblAgregar.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblAgregar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblAgregar.Location = new System.Drawing.Point(52, 380);
+            this.lblAgregar.Name = "lblAgregar";
+            this.lblAgregar.Size = new System.Drawing.Size(91, 13);
+            this.lblAgregar.TabIndex = 4;
+            this.lblAgregar.Text = "Agregar Nuevo ->";
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnAgregar.Location = new System.Drawing.Point(149, 370);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(122, 35);
+            this.btnAgregar.TabIndex = 5;
+            this.btnAgregar.Text = "Agregar Nuevo";
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
             // ListarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(952, 422);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.lblAgregar);
             this.Controls.Add(this.lblEliminar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.pbArticulo);
@@ -113,5 +141,7 @@
         private System.Windows.Forms.PictureBox pbArticulo;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label lblEliminar;
+        private System.Windows.Forms.Label lblAgregar;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }

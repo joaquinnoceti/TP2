@@ -77,5 +77,12 @@ namespace WindowsFormsApp1
             MessageBox.Show("Articulo eliminado");
             cargar();
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            AgregarElemento ventana = new AgregarElemento();
+            ventana.ShowDialog();
+            cargar();
+        }
     }
 }
