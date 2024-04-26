@@ -47,6 +47,7 @@
             this.dgvListArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListArticulos.Size = new System.Drawing.Size(524, 231);
             this.dgvListArticulos.TabIndex = 0;
+            this.dgvListArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListArticulos_CellContentClick);
             this.dgvListArticulos.SelectionChanged += new System.EventHandler(this.dgvListArticulos_SelectionChanged);
             // 
             // pbArticulo

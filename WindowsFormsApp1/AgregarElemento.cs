@@ -21,6 +21,11 @@ namespace WindowsFormsApp1
 
         private void AgregarElemento_Load(object sender, EventArgs e)
         {
+            cargar();
+        }
+
+        private void cargar()
+        {
             CategoriaNegocio cat = new CategoriaNegocio();
             MarcaNegocio marca = new MarcaNegocio();
 
@@ -34,7 +39,6 @@ namespace WindowsFormsApp1
 
                 throw ex;
             }
-
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -48,6 +52,7 @@ namespace WindowsFormsApp1
                 art.Descripcion = txtDescripcion.Text;
                 art.Marca = (Marca)cboxMarca.SelectedItem;
                 art.Categoria = (Categoria)cboxCategoria.SelectedItem;
+                art.Precio = decimal.Parse(txtPrecio.Text);
 
                 negocio.agregar(art);
                 MessageBox.Show("Agregado correctamente");
@@ -59,7 +64,7 @@ namespace WindowsFormsApp1
 
                 MessageBox.Show(ex.ToString());
             }
-
+            cargar();
 
 
         }

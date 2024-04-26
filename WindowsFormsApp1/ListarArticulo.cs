@@ -58,5 +58,10 @@ namespace WindowsFormsApp1
                 pbArticulo.Load("https://www.shutterstock.com/image-vector/ui-image-placeholder-wireframes-apps-260nw-1037719204.jpg");
             }
         }
+
+        private void dgvListArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cargar();
+        }
     }
 }
