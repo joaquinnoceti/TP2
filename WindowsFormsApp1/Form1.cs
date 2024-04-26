@@ -57,5 +57,17 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(AgregarCategoria))
+                    return;
+            }
+
+            AgregarCategoria ventana = new AgregarCategoria();
+            ventana.ShowDialog();
+        }
     }
 }

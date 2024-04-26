@@ -76,5 +76,10 @@ namespace WindowsFormsApp1
             ventana.ShowDialog();
             this.Close();
         }
+
+        private void txtCodArt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

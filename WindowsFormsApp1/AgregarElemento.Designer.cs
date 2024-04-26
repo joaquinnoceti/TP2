@@ -129,6 +129,7 @@
             this.txtCodArt.Name = "txtCodArt";
             this.txtCodArt.Size = new System.Drawing.Size(147, 20);
             this.txtCodArt.TabIndex = 0;
+            this.txtCodArt.TextChanged += new System.EventHandler(this.txtCodArt_TextChanged);
             // 
             // txtNombreArt
             // 
