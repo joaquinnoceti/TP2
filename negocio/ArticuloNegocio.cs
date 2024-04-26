@@ -20,7 +20,7 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("SELECT Nombre, Codigo,a.Descripcion,Precio,i.ImagenUrl,m.Descripcion AS Marca,c.Descripcion AS Categoria,a.Id FROM ARTICULOS a INNER JOIN MARCAS m ON m.Id = a.IdMarca INNER JOIN CATEGORIAS c ON c.Id = a.IdCategoria LEFT JOIN IMAGENES i ON i.IdArticulo = a.Id");
+                datos.setearConsulta("SELECT Nombre, Codigo,a.Descripcion,Precio,i.ImagenUrl,m.Descripcion AS Marca, a.IdCategoria,c.Descripcion AS Categoria,a.IdMarca,a.Id FROM ARTICULOS a INNER JOIN MARCAS m ON m.Id = a.IdMarca INNER JOIN CATEGORIAS c ON c.Id = a.IdCategoria LEFT JOIN IMAGENES i ON i.IdArticulo = a.Id");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -36,10 +36,10 @@ namespace negocio
                     if (!(datos.Lector["ImagenUrl"] is DBNull))
                         aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
                     aux.Marca = new Marca();
-                    //aux.IDMarca.IDMarca= (int)datos.Lector["IdMarca"];
+                    aux.Marca.IDMarca= (int)datos.Lector["IdMarca"];
                     aux.Marca.NombreMarca = (string)datos.Lector["Marca"];
                     aux.Categoria = new Categoria();
-                    //aux.IDCategoria.IDCategoria = (int)datos.Lector["IdCategoria"];
+                    aux.Categoria.IDCategoria = (int)datos.Lector["IdCategoria"];
                     aux.Categoria.NombreCategoria = (string)datos.Lector["Categoria"];
 
 

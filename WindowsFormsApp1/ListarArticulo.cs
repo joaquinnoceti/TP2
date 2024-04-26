@@ -84,5 +84,17 @@ namespace WindowsFormsApp1
             ventana.ShowDialog();
             cargar();
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Articulo seleccionado;
+
+            seleccionado = (Articulo)dgvListArticulos.CurrentRow.DataBoundItem;
+
+            AgregarElemento modificar = new AgregarElemento(seleccionado);
+            modificar.ShowDialog();
+            cargar();
+
+        }
     }
 }

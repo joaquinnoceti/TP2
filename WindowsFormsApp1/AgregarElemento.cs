@@ -14,9 +14,16 @@ namespace WindowsFormsApp1
 {
     public partial class AgregarElemento : Form
     {
+        private Articulo art = null;
         public AgregarElemento()
         {
             InitializeComponent();
+        }
+
+        public AgregarElemento(Articulo art)
+        {
+            InitializeComponent();
+            this.art = art;
         }
 
         private void AgregarElemento_Load(object sender, EventArgs e)
@@ -32,7 +39,25 @@ namespace WindowsFormsApp1
             try
             {
                 cboxCategoria.DataSource = cat.listarCategorias();
+                cboxCategoria.ValueMember = "Id";
+                cboxCategoria.DisplayMember = "Descripcion";
                 cboxMarca.DataSource = marca.listarMarcas();
+                cboxMarca.ValueMember = "Id";
+                cboxMarca.DisplayMember = "Descripcion";
+
+                if(art != null)
+                {
+                    txtCodArt.Text = art.CodArticulo;
+                    txtNombreArt.Text=art.NombreArticulo;
+                    txtDescripcion.Text=art.Descripcion;
+                    tbxUrlImagen.Text = art.ImagenUrl;
+                    cargarImagen(art.ImagenUrl);
+                    txtPrecio.Text=art.Precio.ToString();
+                    cboxCategoria.SelectedValue = art.Categoria.IDCategoria;
+                    cboxMarca.SelectedValue = art.Marca.IDMarca;
+                }
+
+
             }
             catch (Exception ex)
             {
