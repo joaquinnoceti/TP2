@@ -30,6 +30,8 @@
         {
             this.dgvListArticulos = new System.Windows.Forms.DataGridView();
             this.pbArticulo = new System.Windows.Forms.PictureBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.lblEliminar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).BeginInit();
             this.SuspendLayout();
@@ -59,12 +61,39 @@
             this.pbArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbArticulo.TabIndex = 1;
             this.pbArticulo.TabStop = false;
+            this.pbArticulo.Click += new System.EventHandler(this.pbArticulo_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnEliminar.Location = new System.Drawing.Point(149, 311);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(99, 38);
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // lblEliminar
+            // 
+            this.lblEliminar.AutoSize = true;
+            this.lblEliminar.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblEliminar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblEliminar.Location = new System.Drawing.Point(20, 324);
+            this.lblEliminar.Name = "lblEliminar";
+            this.lblEliminar.Size = new System.Drawing.Size(123, 13);
+            this.lblEliminar.TabIndex = 3;
+            this.lblEliminar.Text = "Eliminar Seleccionado ->";
             // 
             // ListarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(952, 422);
+            this.Controls.Add(this.lblEliminar);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.pbArticulo);
             this.Controls.Add(this.dgvListArticulos);
             this.Name = "ListarArticulo";
@@ -74,6 +103,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvListArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -81,5 +111,7 @@
 
         private System.Windows.Forms.DataGridView dgvListArticulos;
         private System.Windows.Forms.PictureBox pbArticulo;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Label lblEliminar;
     }
 }

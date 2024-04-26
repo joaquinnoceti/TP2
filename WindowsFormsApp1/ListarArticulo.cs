@@ -63,5 +63,19 @@ namespace WindowsFormsApp1
         {
             cargar();
         }
+
+        private void pbArticulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            Articulo seleccionado = (Articulo)dgvListArticulos.CurrentRow.DataBoundItem;
+            negocio.eliminar(seleccionado);
+            MessageBox.Show("Articulo eliminado");
+            cargar();
+        }
     }
 }

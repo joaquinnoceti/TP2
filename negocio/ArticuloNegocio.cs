@@ -82,6 +82,26 @@ namespace negocio
                 datos.cerrarConexion(); 
             }
         }
+
+        public void eliminar(Articulo art)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("Delete FROM ARTICULOS Where Codigo ='" + art.CodArticulo + "'");
+                datos.ejecutarAccion();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 
 }
