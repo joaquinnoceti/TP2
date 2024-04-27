@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
+            Text = "Principal";
         }
 
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)

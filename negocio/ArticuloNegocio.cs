@@ -14,7 +14,7 @@ namespace negocio
     public class ArticuloNegocio
     {
         public List<Articulo> Listar()
-       {
+        {
             List<Articulo> lista = new List<Articulo>();
             AccesoDatos datos = new AccesoDatos();
 
@@ -36,7 +36,7 @@ namespace negocio
                     if (!(datos.Lector["ImagenUrl"] is DBNull))
                         aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
                     aux.Marca = new Marca();
-                    aux.Marca.IDMarca= (int)datos.Lector["IdMarca"];
+                    aux.Marca.IDMarca = (int)datos.Lector["IdMarca"];
                     aux.Marca.NombreMarca = (string)datos.Lector["Marca"];
                     aux.Categoria = new Categoria();
                     aux.Categoria.IDCategoria = (int)datos.Lector["IdCategoria"];
@@ -61,7 +61,7 @@ namespace negocio
 
             }
 
-       }
+        }
 
         public void agregar(Articulo nuevo)
         {
@@ -69,17 +69,24 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("INSERT INTO ARTICULOS(Codigo,Nombre,Descripcion,IdMarca,IdCategoria,Precio)VALUES('" + nuevo.CodArticulo + "','" + nuevo.NombreArticulo + "','" + nuevo.Descripcion + "','" + nuevo.Marca.IDMarca + "','" + nuevo.Categoria.IDCategoria + "','" + nuevo.Precio +"')");
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo,Nombre,Descripcion,IdMarca,IdCategoria,Precio) VALUES (@Codigo,@Nombre,@Descripcion,@IdMarca,@IdCategoria,@Precio)");
+                datos.setearParametros("@Codigo", nuevo.CodArticulo);
+                datos.setearParametros("@Nombre", nuevo.NombreArticulo);
+                datos.setearParametros("@Descripcion", nuevo.Descripcion);
+                datos.setearParametros("@IdMarca", nuevo.Marca.IDMarca);
+                datos.setearParametros("@IdCategoria", nuevo.Categoria.IDCategoria);
+                datos.setearParametros("@Precio", nuevo.Precio);
                 datos.ejecutarAccion();
+
             }
             catch (Exception ex)
             {
 
                 throw ex;
             }
-            finally 
-            { 
-                datos.cerrarConexion(); 
+            finally
+            {
+                datos.cerrarConexion();
             }
         }
 
@@ -88,8 +95,11 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("INSERT INTO IMAGENES(IdArticulo,ImagenUrl)VALUES('" + art.ID + "','" + art.ImagenUrl + "')");
-                datos.ejecutarAccion();
+
+                datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo,ImagenUrl) VALUES (@IdArticulo,@ImagenUrl)");
+                datos.setearParametros("@IdArticulo", art.ID);
+                datos.setearParametros("@Codigo", art.ImagenUrl);
+
             }
             catch (Exception ex)
             {
@@ -121,6 +131,50 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
-    }
 
+        public void modificar(Articulo art)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("");
+                datos.setearConsulta("UPDATE ARTICULOS SET Codigo = @codigo, Nombre = @nombre, Descripcion = @desc, IdMarca = @IdMarca, IdCategoria = @IdCat , Precio = @precio WHERE Id = @Id");
+                datos.setearParametros("@codigo", art.CodArticulo);
+                datos.setearParametros("@nombre", art.NombreArticulo);
+                datos.setearParametros("@desc", art.Descripcion);
+                datos.setearParametros("@IdMarca", art.Marca.IDMarca);
+                datos.setearParametros("@IdCat", art.Categoria.IDCategoria);
+                datos.setearParametros("@precio", art.Precio);
+                datos.setearParametros("@Id", art.ID);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void modificarImagen(Articulo art)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("");
+                datos.setearConsulta("UPDATE IMAGENES SET ImagenUrl = @img WHERE Id = @Id");
+                datos.setearParametros("@img", art.ImagenUrl);
+                datos.setearParametros("@Id", art.ID);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception EX1)
+            {
+
+                throw EX1;
+            }
+        }
+
+    }
 }

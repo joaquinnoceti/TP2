@@ -18,12 +18,14 @@ namespace WindowsFormsApp1
         public AgregarElemento()
         {
             InitializeComponent();
+            Text = "Agregar Articulo";
         }
 
         public AgregarElemento(Articulo art)
         {
             InitializeComponent();
             this.art = art;
+            Text = "Modificar Articulo";
         }
 
         private void AgregarElemento_Load(object sender, EventArgs e)
@@ -39,11 +41,11 @@ namespace WindowsFormsApp1
             try
             {
                 cboxCategoria.DataSource = cat.listarCategorias();
-                cboxCategoria.ValueMember = "Id";
-                cboxCategoria.DisplayMember = "Descripcion";
+                cboxCategoria.ValueMember = "IDCategoria";
+                cboxCategoria.DisplayMember = "NombreCategoria";
                 cboxMarca.DataSource = marca.listarMarcas();
-                cboxMarca.ValueMember = "Id";
-                cboxMarca.DisplayMember = "Descripcion";
+                cboxMarca.ValueMember = "IDMarca";
+                cboxMarca.DisplayMember = "NombreMarca";
 
                 if(art != null)
                 {
@@ -61,17 +63,19 @@ namespace WindowsFormsApp1
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Articulo art = new Articulo();
+
             ArticuloNegocio negocio = new ArticuloNegocio();
             try
             {
+                if (art == null)
+                    art = new Articulo();
+
                 art.CodArticulo = txtCodArt.Text;
                 art.NombreArticulo = txtNombreArt.Text;
                 art.Descripcion = txtDescripcion.Text;
@@ -80,11 +84,22 @@ namespace WindowsFormsApp1
                 art.Categoria = (Categoria)cboxCategoria.SelectedItem;
                 art.Precio = decimal.Parse(txtPrecio.Text);
 
-                negocio.agregar(art);
-                negocio.agregarImagen(art);
-                MessageBox.Show("Agregado correctamente");
-                Close();
 
+                if (art.ID != 0)
+                {
+                    negocio.modificar(art);
+                    negocio.modificarImagen(art);
+                    MessageBox.Show("Modificado correctamente");
+                }
+                else
+                {
+                    negocio.agregar(art);
+                    negocio.agregarImagen(art);
+                    MessageBox.Show("Agregado correctamente");
+
+                }
+
+                Close();
             }
             catch (Exception ex)
             {
