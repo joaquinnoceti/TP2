@@ -70,5 +70,10 @@ namespace WindowsFormsApp1
             AgregarCategoria ventana = new AgregarCategoria();
             ventana.ShowDialog();
         }
+
+        private void verToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

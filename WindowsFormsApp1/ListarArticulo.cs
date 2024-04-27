@@ -24,6 +24,7 @@ namespace WindowsFormsApp1
             cboxCampo.Items.Add("Codigo");
             cboxCampo.Items.Add("Nombre");
             cboxCampo.Items.Add("Precio");
+            lblErrorFiltroAvan.Visible = false;
 
         }
 
@@ -176,16 +177,32 @@ namespace WindowsFormsApp1
             ArticuloNegocio negocio = new ArticuloNegocio();
             try
             {
-                string campo = cboxCampo.SelectedItem.ToString();
-                string criterio = cboxCriterio.SelectedItem.ToString();
-                string filtro = txtFiltroAvanzado.Text.ToString();
-                dgvListArticulos.DataSource = negocio.filtroAvanzado(campo, criterio, filtro);
+                if (txtFiltroAvanzado.Text != "")
+                {
+                    string campo = cboxCampo.SelectedItem.ToString();
+                    string criterio = cboxCriterio.SelectedItem.ToString();
+                    string filtro = txtFiltroAvanzado.Text.ToString();
+                    dgvListArticulos.DataSource = negocio.filtroAvanzado(campo, criterio, filtro);
+                    lblErrorFiltroAvan.Visible = false;
+                }
+                else
+                {
+                    lblErrorFiltroAvan.Visible = true;
+                    lblErrorFiltroAvan.Text = "Completar campo";
+                    lblErrorFiltroAvan.ForeColor = System.Drawing.Color.Red;
+                }
+                
             }
-            catch (Exception)
+            catch (Exception ex )
             {
 
-                throw;
+                throw ex;
             }
+        }
+
+        private void btnQuitarFiltro_Click(object sender, EventArgs e)
+        {
+            cargar();
         }
     }
 }

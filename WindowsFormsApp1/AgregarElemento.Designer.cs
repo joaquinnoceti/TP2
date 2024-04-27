@@ -42,10 +42,6 @@
             this.cboxMarca = new System.Windows.Forms.ComboBox();
             this.cboxCategoria = new System.Windows.Forms.ComboBox();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.articulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pbxArticulo = new System.Windows.Forms.PictureBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblUrlImagen = new System.Windows.Forms.Label();
@@ -54,14 +50,13 @@
             this.lblAterisco2 = new System.Windows.Forms.Label();
             this.lblAterisco3 = new System.Windows.Forms.Label();
             this.lblAterisco4 = new System.Windows.Forms.Label();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 73);
+            this.label2.Location = new System.Drawing.Point(13, 38);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 1;
@@ -70,7 +65,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 99);
+            this.label3.Location = new System.Drawing.Point(9, 64);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 13);
             this.label3.TabIndex = 2;
@@ -79,7 +74,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 122);
+            this.label4.Location = new System.Drawing.Point(28, 87);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 13);
             this.label4.TabIndex = 3;
@@ -88,7 +83,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 179);
+            this.label5.Location = new System.Drawing.Point(10, 144);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 13);
             this.label5.TabIndex = 4;
@@ -97,7 +92,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(2, 206);
+            this.label6.Location = new System.Drawing.Point(-2, 171);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(98, 13);
             this.label6.TabIndex = 5;
@@ -106,7 +101,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(271, 70);
+            this.label7.Location = new System.Drawing.Point(267, 35);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 13);
             this.label7.TabIndex = 6;
@@ -115,7 +110,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(55, 236);
+            this.label8.Location = new System.Drawing.Point(51, 201);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(37, 13);
             this.label8.TabIndex = 7;
@@ -123,7 +118,7 @@
             // 
             // txtCodArt
             // 
-            this.txtCodArt.Location = new System.Drawing.Point(99, 70);
+            this.txtCodArt.Location = new System.Drawing.Point(95, 35);
             this.txtCodArt.Name = "txtCodArt";
             this.txtCodArt.Size = new System.Drawing.Size(147, 20);
             this.txtCodArt.TabIndex = 0;
@@ -131,21 +126,21 @@
             // 
             // txtNombreArt
             // 
-            this.txtNombreArt.Location = new System.Drawing.Point(99, 96);
+            this.txtNombreArt.Location = new System.Drawing.Point(95, 61);
             this.txtNombreArt.Name = "txtNombreArt";
             this.txtNombreArt.Size = new System.Drawing.Size(147, 20);
             this.txtNombreArt.TabIndex = 1;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(99, 122);
+            this.txtDescripcion.Location = new System.Drawing.Point(95, 87);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(147, 20);
             this.txtDescripcion.TabIndex = 2;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(98, 233);
+            this.txtPrecio.Location = new System.Drawing.Point(94, 198);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(147, 20);
             this.txtPrecio.TabIndex = 6;
@@ -154,7 +149,7 @@
             // 
             this.cboxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxMarca.FormattingEnabled = true;
-            this.cboxMarca.Location = new System.Drawing.Point(98, 176);
+            this.cboxMarca.Location = new System.Drawing.Point(94, 141);
             this.cboxMarca.Name = "cboxMarca";
             this.cboxMarca.Size = new System.Drawing.Size(147, 21);
             this.cboxMarca.TabIndex = 4;
@@ -163,14 +158,14 @@
             // 
             this.cboxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxCategoria.FormattingEnabled = true;
-            this.cboxCategoria.Location = new System.Drawing.Point(98, 203);
+            this.cboxCategoria.Location = new System.Drawing.Point(94, 168);
             this.cboxCategoria.Name = "cboxCategoria";
             this.cboxCategoria.Size = new System.Drawing.Size(147, 21);
             this.cboxCategoria.TabIndex = 5;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(192, 259);
+            this.btnAgregar.Location = new System.Drawing.Point(188, 224);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(66, 23);
             this.btnAgregar.TabIndex = 7;
@@ -178,44 +173,9 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.articulosToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(555, 24);
-            this.menuStrip1.TabIndex = 8;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // articulosToolStripMenuItem
-            // 
-            this.articulosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inicioToolStripMenuItem,
-            this.listarToolStripMenuItem});
-            this.articulosToolStripMenuItem.Name = "articulosToolStripMenuItem";
-            this.articulosToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.articulosToolStripMenuItem.Text = "Articulos";
-            // 
-            // inicioToolStripMenuItem
-            // 
-            this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
-            this.inicioToolStripMenuItem.Text = "Inicio";
-            this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
-            // 
-            // listarToolStripMenuItem
-            // 
-            this.listarToolStripMenuItem.Name = "listarToolStripMenuItem";
-            this.listarToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
-            this.listarToolStripMenuItem.Text = "Listar";
-            this.listarToolStripMenuItem.Click += new System.EventHandler(this.listarToolStripMenuItem_Click);
-            // 
             // pbxArticulo
             // 
-            this.pbxArticulo.Location = new System.Drawing.Point(319, 70);
+            this.pbxArticulo.Location = new System.Drawing.Point(315, 35);
             this.pbxArticulo.Name = "pbxArticulo";
             this.pbxArticulo.Size = new System.Drawing.Size(217, 183);
             this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -224,7 +184,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(289, 259);
+            this.btnCancelar.Location = new System.Drawing.Point(285, 224);
             this.btnCancelar.MinimumSize = new System.Drawing.Size(75, 23);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
@@ -236,7 +196,7 @@
             // lblUrlImagen
             // 
             this.lblUrlImagen.AutoSize = true;
-            this.lblUrlImagen.Location = new System.Drawing.Point(34, 152);
+            this.lblUrlImagen.Location = new System.Drawing.Point(30, 117);
             this.lblUrlImagen.Name = "lblUrlImagen";
             this.lblUrlImagen.Size = new System.Drawing.Size(58, 13);
             this.lblUrlImagen.TabIndex = 11;
@@ -244,7 +204,7 @@
             // 
             // tbxUrlImagen
             // 
-            this.tbxUrlImagen.Location = new System.Drawing.Point(99, 150);
+            this.tbxUrlImagen.Location = new System.Drawing.Point(95, 115);
             this.tbxUrlImagen.Name = "tbxUrlImagen";
             this.tbxUrlImagen.Size = new System.Drawing.Size(147, 20);
             this.tbxUrlImagen.TabIndex = 3;
@@ -253,7 +213,7 @@
             // lblAterisco1
             // 
             this.lblAterisco1.AutoSize = true;
-            this.lblAterisco1.Location = new System.Drawing.Point(246, 70);
+            this.lblAterisco1.Location = new System.Drawing.Point(242, 35);
             this.lblAterisco1.Name = "lblAterisco1";
             this.lblAterisco1.Size = new System.Drawing.Size(11, 13);
             this.lblAterisco1.TabIndex = 12;
@@ -262,7 +222,7 @@
             // lblAterisco2
             // 
             this.lblAterisco2.AutoSize = true;
-            this.lblAterisco2.Location = new System.Drawing.Point(246, 93);
+            this.lblAterisco2.Location = new System.Drawing.Point(242, 58);
             this.lblAterisco2.Name = "lblAterisco2";
             this.lblAterisco2.Size = new System.Drawing.Size(11, 13);
             this.lblAterisco2.TabIndex = 13;
@@ -271,7 +231,7 @@
             // lblAterisco3
             // 
             this.lblAterisco3.AutoSize = true;
-            this.lblAterisco3.Location = new System.Drawing.Point(246, 119);
+            this.lblAterisco3.Location = new System.Drawing.Point(242, 84);
             this.lblAterisco3.Name = "lblAterisco3";
             this.lblAterisco3.Size = new System.Drawing.Size(11, 13);
             this.lblAterisco3.TabIndex = 14;
@@ -280,7 +240,7 @@
             // lblAterisco4
             // 
             this.lblAterisco4.AutoSize = true;
-            this.lblAterisco4.Location = new System.Drawing.Point(246, 233);
+            this.lblAterisco4.Location = new System.Drawing.Point(242, 198);
             this.lblAterisco4.Name = "lblAterisco4";
             this.lblAterisco4.Size = new System.Drawing.Size(11, 13);
             this.lblAterisco4.TabIndex = 15;
@@ -290,7 +250,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(555, 304);
+            this.ClientSize = new System.Drawing.Size(545, 279);
             this.Controls.Add(this.lblAterisco4);
             this.Controls.Add(this.lblAterisco3);
             this.Controls.Add(this.lblAterisco2);
@@ -313,16 +273,12 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AgregarElemento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AgregarElemento";
             this.Load += new System.EventHandler(this.AgregarElemento_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -344,10 +300,6 @@
         private System.Windows.Forms.ComboBox cboxMarca;
         private System.Windows.Forms.ComboBox cboxCategoria;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem articulosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem;
         private System.Windows.Forms.PictureBox pbxArticulo;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblUrlImagen;

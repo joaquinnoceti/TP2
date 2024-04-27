@@ -14,6 +14,7 @@ namespace WindowsFormsApp1
 {
     public partial class AgregarCategoria : Form
     {
+        private List<Categoria> lista;
         public AgregarCategoria()
         {
             InitializeComponent();
@@ -23,13 +24,48 @@ namespace WindowsFormsApp1
         {
             Categoria cat = new Categoria();
             CategoriaNegocio negocio = new CategoriaNegocio();
+
+            if (txtCatDesc.Text != "")
+            {
+                try
+                {
+                    cat.NombreCategoria = txtCatDesc.Text;
+                    negocio.agregar(cat);
+                    MessageBox.Show("Agregado correctamente");
+                    Close();
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Completar el campo");
+            }
+            
+            
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AgregarCategoria_Load(object sender, EventArgs e)
+        {
+            cargar();
+        }
+
+        private void cargar()
+        {
+            CategoriaNegocio negocio = new CategoriaNegocio();
             try
             {
-                cat.NombreCategoria = txtCatDesc.Text;
-                negocio.agregar(cat);
-                MessageBox.Show("Agregado correctamente");
-                Close();
-
+                lista = negocio.listarCategorias();
+                dgvCategoria.DataSource = lista;
             }
             catch (Exception ex)
             {
@@ -38,9 +74,5 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
