@@ -43,6 +43,7 @@ namespace WindowsFormsApp1
         private void ocultarColumnas()
         {
             dgvListArticulos.Columns["ImagenUrl"].Visible = false;
+            dgvListArticulos.Columns["ID"].Visible = false;
         }
 
         private void dgvListArticulos_SelectionChanged(object sender, EventArgs e)
