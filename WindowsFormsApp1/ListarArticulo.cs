@@ -73,9 +73,20 @@ namespace WindowsFormsApp1
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
             Articulo seleccionado = (Articulo)dgvListArticulos.CurrentRow.DataBoundItem;
-            negocio.eliminar(seleccionado);
-            MessageBox.Show("Articulo eliminado");
-            cargar();
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("Seguro desea elimiar el artículo?", "Eliminar", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                if(respuesta == DialogResult.OK)
+                {
+                    negocio.eliminar(seleccionado);
+                    MessageBox.Show("Articulo eliminado");
+                    cargar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
