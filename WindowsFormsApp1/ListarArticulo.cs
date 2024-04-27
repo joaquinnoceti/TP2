@@ -30,7 +30,7 @@ namespace WindowsFormsApp1
             {
                 listaArticulos = negocio.Listar();
                 dgvListArticulos.DataSource = listaArticulos;
-                dgvListArticulos.Columns["ImagenUrl"].Visible = false;
+                ocultarColumnas();
                 pbArticulo.Load(listaArticulos[0].ImagenUrl);
             }
             catch (Exception ex)
@@ -38,6 +38,11 @@ namespace WindowsFormsApp1
 
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void ocultarColumnas()
+        {
+            dgvListArticulos.Columns["ImagenUrl"].Visible = false;
         }
 
         private void dgvListArticulos_SelectionChanged(object sender, EventArgs e)
@@ -106,6 +111,23 @@ namespace WindowsFormsApp1
             modificar.ShowDialog();
             cargar();
 
+        }
+
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada;
+            string filtro = txtFiltro.Text;
+            if(filtro != "")
+            {
+                listaFiltrada = listaArticulos.FindAll(x => x.NombreArticulo.ToLower().Contains(filtro.ToLower()) || x.CodArticulo.ToLower().Contains(filtro.ToLower()) || x.Descripcion.ToLower().Contains(filtro.ToLower()) || x.Marca.ToString().ToLower().Contains(filtro.ToLower()));
+            }
+            else
+            {
+                listaFiltrada = listaArticulos;
+            }
+            dgvListArticulos.DataSource = null;
+            dgvListArticulos.DataSource = listaFiltrada;
+            ocultarColumnas();
         }
     }
 }
