@@ -40,13 +40,13 @@
             this.btnFiltro = new System.Windows.Forms.Button();
             this.lblCampo = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblErrorFiltroAvan = new System.Windows.Forms.Label();
             this.btnFiltroAvanzado = new System.Windows.Forms.Button();
             this.cboxCriterio = new System.Windows.Forms.ComboBox();
             this.cboxCampo = new System.Windows.Forms.ComboBox();
             this.txtFiltroAvanzado = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblErrorFiltroAvan = new System.Windows.Forms.Label();
             this.btnQuitarFiltro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArticulo)).BeginInit();
@@ -156,6 +156,7 @@
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(183, 20);
             this.txtFiltro.TabIndex = 8;
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // btnFiltro
             // 
@@ -192,6 +193,15 @@
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros Avanzados";
+            // 
+            // lblErrorFiltroAvan
+            // 
+            this.lblErrorFiltroAvan.AutoSize = true;
+            this.lblErrorFiltroAvan.Location = new System.Drawing.Point(137, 100);
+            this.lblErrorFiltroAvan.Name = "lblErrorFiltroAvan";
+            this.lblErrorFiltroAvan.Size = new System.Drawing.Size(29, 13);
+            this.lblErrorFiltroAvan.TabIndex = 15;
+            this.lblErrorFiltroAvan.Text = "Filtro";
             // 
             // btnFiltroAvanzado
             // 
@@ -246,15 +256,6 @@
             this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Criterio";
-            // 
-            // lblErrorFiltroAvan
-            // 
-            this.lblErrorFiltroAvan.AutoSize = true;
-            this.lblErrorFiltroAvan.Location = new System.Drawing.Point(137, 100);
-            this.lblErrorFiltroAvan.Name = "lblErrorFiltroAvan";
-            this.lblErrorFiltroAvan.Size = new System.Drawing.Size(29, 13);
-            this.lblErrorFiltroAvan.TabIndex = 15;
-            this.lblErrorFiltroAvan.Text = "Filtro";
             // 
             // btnQuitarFiltro
             // 
