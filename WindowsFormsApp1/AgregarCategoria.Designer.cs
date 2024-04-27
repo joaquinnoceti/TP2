@@ -80,8 +80,12 @@
             // dgvCategoria
             // 
             this.dgvCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCategoria.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvCategoria.Location = new System.Drawing.Point(222, 27);
+            this.dgvCategoria.MultiSelect = false;
             this.dgvCategoria.Name = "dgvCategoria";
+            this.dgvCategoria.ReadOnly = true;
+            this.dgvCategoria.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvCategoria.Size = new System.Drawing.Size(250, 190);
             this.dgvCategoria.TabIndex = 4;
             // 
@@ -89,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 261);
+            this.ClientSize = new System.Drawing.Size(521, 261);
             this.Controls.Add(this.dgvCategoria);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtCatDesc);
