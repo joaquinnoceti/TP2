@@ -21,6 +21,10 @@ namespace WindowsFormsApp1
         private void ListarArticulo_Load(object sender, EventArgs e)
         {
             cargar();
+            cboxCampo.Items.Add("Codigo");
+            cboxCampo.Items.Add("Nombre");
+            cboxCampo.Items.Add("Precio");
+
         }
 
         private void cargar()
@@ -48,8 +52,16 @@ namespace WindowsFormsApp1
 
         private void dgvListArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            Articulo seleccionado = (Articulo)dgvListArticulos.CurrentRow.DataBoundItem; 
-            cargarImagen(seleccionado.ImagenUrl);
+            if(dgvListArticulos.SelectedRows.Count == 0)
+            {
+
+            }
+            else 
+            {
+                Articulo seleccionado = (Articulo)dgvListArticulos.CurrentRow.DataBoundItem;
+                cargarImagen(seleccionado.ImagenUrl);
+            }
+            
         }
 
         private void cargarImagen(string imagen)
@@ -118,7 +130,7 @@ namespace WindowsFormsApp1
         {
             List<Articulo> listaFiltrada;
             string filtro = txtFiltro.Text;
-            if(filtro != "")
+            if (filtro != "")
             {
                 listaFiltrada = listaArticulos.FindAll(x => x.NombreArticulo.ToLower().Contains(filtro.ToLower()) || x.CodArticulo.ToLower().Contains(filtro.ToLower()) || x.Descripcion.ToLower().Contains(filtro.ToLower()) || x.Marca.ToString().ToLower().Contains(filtro.ToLower()));
             }
@@ -129,6 +141,51 @@ namespace WindowsFormsApp1
             dgvListArticulos.DataSource = null;
             dgvListArticulos.DataSource = listaFiltrada;
             ocultarColumnas();
+        }
+
+        private void cboxCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opc = cboxCampo.SelectedItem.ToString();
+
+            switch (opc)
+            {
+                case "Codigo":
+                    cboxCriterio.Items.Clear();
+                    cboxCriterio.Items.Add("Igual a");
+                    cboxCriterio.Items.Add("Contiene");
+                    cboxCriterio.SelectedIndex = 0;
+                    break;
+                case "Nombre":
+                    cboxCriterio.Items.Clear();
+                    cboxCriterio.Items.Add("Igual a");
+                    cboxCriterio.Items.Add("Contiene");
+                    cboxCriterio.SelectedIndex = 0;
+                    break;
+                case "Precio":
+                    cboxCriterio.Items.Clear();
+                    cboxCriterio.Items.Add("Mayor que");
+                    cboxCriterio.Items.Add("Menor que");
+                    cboxCriterio.Items.Add("Igual");
+                    cboxCriterio.SelectedIndex = 0;
+                    break;
+            }
+        }
+
+        private void btnFiltroAvanzado_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            try
+            {
+                string campo = cboxCampo.SelectedItem.ToString();
+                string criterio = cboxCriterio.SelectedItem.ToString();
+                string filtro = txtFiltroAvanzado.Text.ToString();
+                dgvListArticulos.DataSource = negocio.filtroAvanzado(campo, criterio, filtro);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

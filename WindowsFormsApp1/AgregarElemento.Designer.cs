@@ -50,6 +50,10 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblUrlImagen = new System.Windows.Forms.Label();
             this.tbxUrlImagen = new System.Windows.Forms.TextBox();
+            this.lblAterisco1 = new System.Windows.Forms.Label();
+            this.lblAterisco2 = new System.Windows.Forms.Label();
+            this.lblAterisco3 = new System.Windows.Forms.Label();
+            this.lblAterisco4 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
@@ -57,132 +61,118 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 90);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(17, 73);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 16);
+            this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Codigo Articulo";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 122);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(13, 99);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 16);
+            this.label3.Size = new System.Drawing.Size(82, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Nombre Articulo";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(43, 150);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(32, 122);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 16);
+            this.label4.Size = new System.Drawing.Size(63, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Descripcion";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 220);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(14, 179);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 16);
+            this.label5.Size = new System.Drawing.Size(83, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Marca Producto";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 254);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(2, 206);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(123, 16);
+            this.label6.Size = new System.Drawing.Size(98, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "Categoria Producto";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(361, 86);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(271, 70);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 16);
+            this.label7.Size = new System.Drawing.Size(42, 13);
             this.label7.TabIndex = 6;
             this.label7.Text = "Imagen";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(73, 290);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(55, 236);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 16);
+            this.label8.Size = new System.Drawing.Size(37, 13);
             this.label8.TabIndex = 7;
             this.label8.Text = "Precio";
             // 
             // txtCodArt
             // 
-            this.txtCodArt.Location = new System.Drawing.Point(132, 86);
-            this.txtCodArt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodArt.Location = new System.Drawing.Point(99, 70);
             this.txtCodArt.Name = "txtCodArt";
-            this.txtCodArt.Size = new System.Drawing.Size(195, 22);
+            this.txtCodArt.Size = new System.Drawing.Size(147, 20);
             this.txtCodArt.TabIndex = 0;
             this.txtCodArt.TextChanged += new System.EventHandler(this.txtCodArt_TextChanged);
             // 
             // txtNombreArt
             // 
-            this.txtNombreArt.Location = new System.Drawing.Point(132, 118);
-            this.txtNombreArt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreArt.Location = new System.Drawing.Point(99, 96);
             this.txtNombreArt.Name = "txtNombreArt";
-            this.txtNombreArt.Size = new System.Drawing.Size(195, 22);
+            this.txtNombreArt.Size = new System.Drawing.Size(147, 20);
             this.txtNombreArt.TabIndex = 1;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(132, 150);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescripcion.Location = new System.Drawing.Point(99, 122);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(195, 22);
+            this.txtDescripcion.Size = new System.Drawing.Size(147, 20);
             this.txtDescripcion.TabIndex = 2;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(131, 287);
-            this.txtPrecio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrecio.Location = new System.Drawing.Point(98, 233);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(195, 22);
+            this.txtPrecio.Size = new System.Drawing.Size(147, 20);
             this.txtPrecio.TabIndex = 6;
             // 
             // cboxMarca
             // 
             this.cboxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxMarca.FormattingEnabled = true;
-            this.cboxMarca.Location = new System.Drawing.Point(131, 217);
-            this.cboxMarca.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboxMarca.Location = new System.Drawing.Point(98, 176);
             this.cboxMarca.Name = "cboxMarca";
-            this.cboxMarca.Size = new System.Drawing.Size(195, 24);
+            this.cboxMarca.Size = new System.Drawing.Size(147, 21);
             this.cboxMarca.TabIndex = 4;
             // 
             // cboxCategoria
             // 
             this.cboxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxCategoria.FormattingEnabled = true;
-            this.cboxCategoria.Location = new System.Drawing.Point(131, 250);
-            this.cboxCategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboxCategoria.Location = new System.Drawing.Point(98, 203);
             this.cboxCategoria.Name = "cboxCategoria";
-            this.cboxCategoria.Size = new System.Drawing.Size(195, 24);
+            this.cboxCategoria.Size = new System.Drawing.Size(147, 21);
             this.cboxCategoria.TabIndex = 5;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(256, 319);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregar.Location = new System.Drawing.Point(192, 259);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(88, 28);
+            this.btnAgregar.Size = new System.Drawing.Size(66, 23);
             this.btnAgregar.TabIndex = 7;
             this.btnAgregar.Text = "Aceptar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -195,7 +185,8 @@
             this.articulosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(740, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(555, 24);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -205,40 +196,38 @@
             this.inicioToolStripMenuItem,
             this.listarToolStripMenuItem});
             this.articulosToolStripMenuItem.Name = "articulosToolStripMenuItem";
-            this.articulosToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
+            this.articulosToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.articulosToolStripMenuItem.Text = "Articulos";
             // 
             // inicioToolStripMenuItem
             // 
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.inicioToolStripMenuItem.Text = "Inicio";
             this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
             // 
             // listarToolStripMenuItem
             // 
             this.listarToolStripMenuItem.Name = "listarToolStripMenuItem";
-            this.listarToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
+            this.listarToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.listarToolStripMenuItem.Text = "Listar";
             this.listarToolStripMenuItem.Click += new System.EventHandler(this.listarToolStripMenuItem_Click);
             // 
             // pbxArticulo
             // 
-            this.pbxArticulo.Location = new System.Drawing.Point(425, 86);
-            this.pbxArticulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbxArticulo.Location = new System.Drawing.Point(319, 70);
             this.pbxArticulo.Name = "pbxArticulo";
-            this.pbxArticulo.Size = new System.Drawing.Size(289, 225);
+            this.pbxArticulo.Size = new System.Drawing.Size(217, 183);
             this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxArticulo.TabIndex = 9;
             this.pbxArticulo.TabStop = false;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(385, 319);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCancelar.MinimumSize = new System.Drawing.Size(100, 28);
+            this.btnCancelar.Location = new System.Drawing.Point(289, 259);
+            this.btnCancelar.MinimumSize = new System.Drawing.Size(75, 23);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(100, 28);
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -247,27 +236,65 @@
             // lblUrlImagen
             // 
             this.lblUrlImagen.AutoSize = true;
-            this.lblUrlImagen.Location = new System.Drawing.Point(45, 187);
-            this.lblUrlImagen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUrlImagen.Location = new System.Drawing.Point(34, 152);
             this.lblUrlImagen.Name = "lblUrlImagen";
-            this.lblUrlImagen.Size = new System.Drawing.Size(72, 16);
+            this.lblUrlImagen.Size = new System.Drawing.Size(58, 13);
             this.lblUrlImagen.TabIndex = 11;
             this.lblUrlImagen.Text = "Url Imagen";
             // 
             // tbxUrlImagen
             // 
-            this.tbxUrlImagen.Location = new System.Drawing.Point(132, 185);
-            this.tbxUrlImagen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxUrlImagen.Location = new System.Drawing.Point(99, 150);
             this.tbxUrlImagen.Name = "tbxUrlImagen";
-            this.tbxUrlImagen.Size = new System.Drawing.Size(195, 22);
+            this.tbxUrlImagen.Size = new System.Drawing.Size(147, 20);
             this.tbxUrlImagen.TabIndex = 3;
             this.tbxUrlImagen.Leave += new System.EventHandler(this.tbxUrlImagen_Leave);
             // 
+            // lblAterisco1
+            // 
+            this.lblAterisco1.AutoSize = true;
+            this.lblAterisco1.Location = new System.Drawing.Point(246, 70);
+            this.lblAterisco1.Name = "lblAterisco1";
+            this.lblAterisco1.Size = new System.Drawing.Size(11, 13);
+            this.lblAterisco1.TabIndex = 12;
+            this.lblAterisco1.Text = "*";
+            // 
+            // lblAterisco2
+            // 
+            this.lblAterisco2.AutoSize = true;
+            this.lblAterisco2.Location = new System.Drawing.Point(246, 93);
+            this.lblAterisco2.Name = "lblAterisco2";
+            this.lblAterisco2.Size = new System.Drawing.Size(11, 13);
+            this.lblAterisco2.TabIndex = 13;
+            this.lblAterisco2.Text = "*";
+            // 
+            // lblAterisco3
+            // 
+            this.lblAterisco3.AutoSize = true;
+            this.lblAterisco3.Location = new System.Drawing.Point(246, 119);
+            this.lblAterisco3.Name = "lblAterisco3";
+            this.lblAterisco3.Size = new System.Drawing.Size(11, 13);
+            this.lblAterisco3.TabIndex = 14;
+            this.lblAterisco3.Text = "*";
+            // 
+            // lblAterisco4
+            // 
+            this.lblAterisco4.AutoSize = true;
+            this.lblAterisco4.Location = new System.Drawing.Point(246, 233);
+            this.lblAterisco4.Name = "lblAterisco4";
+            this.lblAterisco4.Size = new System.Drawing.Size(11, 13);
+            this.lblAterisco4.TabIndex = 15;
+            this.lblAterisco4.Text = "*";
+            // 
             // AgregarElemento
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 374);
+            this.ClientSize = new System.Drawing.Size(555, 304);
+            this.Controls.Add(this.lblAterisco4);
+            this.Controls.Add(this.lblAterisco3);
+            this.Controls.Add(this.lblAterisco2);
+            this.Controls.Add(this.lblAterisco1);
             this.Controls.Add(this.tbxUrlImagen);
             this.Controls.Add(this.lblUrlImagen);
             this.Controls.Add(this.btnCancelar);
@@ -288,7 +315,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AgregarElemento";
@@ -326,5 +352,9 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblUrlImagen;
         private System.Windows.Forms.TextBox tbxUrlImagen;
+        private System.Windows.Forms.Label lblAterisco1;
+        private System.Windows.Forms.Label lblAterisco2;
+        private System.Windows.Forms.Label lblAterisco3;
+        private System.Windows.Forms.Label lblAterisco4;
     }
 }

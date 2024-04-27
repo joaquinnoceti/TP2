@@ -31,6 +31,10 @@ namespace WindowsFormsApp1
         private void AgregarElemento_Load(object sender, EventArgs e)
         {
             cargar();
+            lblAterisco1.Visible = false;
+            lblAterisco2.Visible = false;
+            lblAterisco3.Visible = false;
+            lblAterisco4.Visible = false;
         }
 
         private void cargar()
@@ -69,46 +73,64 @@ namespace WindowsFormsApp1
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
             ArticuloNegocio negocio = new ArticuloNegocio();
-            try
+
+            if (txtCodArt.Text == "" || txtNombreArt.Text == "" || txtDescripcion.Text == "" || txtPrecio.Text == "")
             {
-                if (art == null)
-                    art = new Articulo();
-
-                art.CodArticulo = txtCodArt.Text;
-                art.NombreArticulo = txtNombreArt.Text;
-                art.Descripcion = txtDescripcion.Text;
-                art.ImagenUrl = tbxUrlImagen.Text;
-                art.Marca = (Marca)cboxMarca.SelectedItem;
-                art.Categoria = (Categoria)cboxCategoria.SelectedItem;
-                art.Precio = decimal.Parse(txtPrecio.Text);
-
-
-                if (art.ID != 0)
-                {
-                    negocio.modificar(art);
-                    negocio.modificarImagen(art);
-                    MessageBox.Show("Modificado correctamente");
-                }
-                else
-                {
-                    negocio.agregar(art);
-                    negocio.agregarImagen(art);
-                    MessageBox.Show("Agregado correctamente");
-
-                }
-
-                Close();
+                validarTxts();
             }
-            catch (Exception ex)
+            else
             {
+                try
+                {
+                    if (art == null)
+                        art = new Articulo();
 
-                MessageBox.Show(ex.ToString());
+                    art.CodArticulo = txtCodArt.Text;
+                    art.NombreArticulo = txtNombreArt.Text;
+                    art.Descripcion = txtDescripcion.Text;
+                    art.ImagenUrl = tbxUrlImagen.Text;
+                    art.Marca = (Marca)cboxMarca.SelectedItem;
+                    art.Categoria = (Categoria)cboxCategoria.SelectedItem;
+                    art.Precio = decimal.Parse(txtPrecio.Text);
+
+
+                    if (art.ID != 0)
+                    {
+                        negocio.modificar(art);
+                        negocio.modificarImagen(art);
+                        MessageBox.Show("Modificado correctamente");
+                    }
+                    else
+                    {
+                        negocio.agregar(art);
+                        negocio.agregarImagen(art);
+                        MessageBox.Show("Agregado correctamente");
+
+                    }
+
+                    Close();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.ToString());
+                }
+                cargar();
             }
-            cargar();
+        }
 
-
+        private void validarTxts()
+        {
+            lblAterisco1.Visible = true;
+            lblAterisco1.ForeColor = Color.Red;
+            lblAterisco2.Visible = true;
+            lblAterisco2.ForeColor = Color.Red;
+            lblAterisco3.Visible = true;
+            lblAterisco3.ForeColor = Color.Red;
+            lblAterisco4.Visible = true;
+            lblAterisco4.ForeColor = Color.Red;
+            MessageBox.Show("Debe completar los campos marcados con *");
         }
 
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)

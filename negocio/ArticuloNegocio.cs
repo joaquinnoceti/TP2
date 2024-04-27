@@ -176,5 +176,85 @@ namespace negocio
             }
         }
 
+        public List<Articulo> filtroAvanzado(string campo, string criterio, string filtro)
+        {
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                string consulta = "SELECT Nombre, Codigo,a.Descripcion,Precio,i.ImagenUrl,m.Descripcion AS Marca, a.IdCategoria,c.Descripcion AS Categoria,a.IdMarca,a.Id FROM ARTICULOS a INNER JOIN MARCAS m ON m.Id = a.IdMarca INNER JOIN CATEGORIAS c ON c.Id = a.IdCategoria LEFT JOIN IMAGENES i ON i.IdArticulo = a.Id WHERE ";
+                switch (campo)
+                {
+                    case "Codigo":
+                        if(criterio == "Igual a")
+                        {
+                            consulta += "Codigo = '" + filtro + "'";
+                        }
+                        else
+                        {
+                            consulta += "Codigo like '%" + filtro + "%'";
+                        }
+                    break;
+
+                    case "Nombre":
+                        if (criterio == "Igual a")
+                        {
+                            consulta += "Nombre = '" + filtro +"'";
+                        }
+                        else
+                        {
+                            consulta += "Nombre like '%" + filtro + "%'";
+                        }
+                    break;
+
+                    default:
+                        switch (criterio)
+                        {
+                            case "Mayor que":
+                                consulta += "Precio > " + filtro;
+                            break;
+                            case "Menor que":
+                                consulta += "Precio < " + filtro;
+                            break;
+                            default:
+                                consulta += "Precio = " + filtro;
+                            break;
+                        }
+                    break;
+
+                }
+                datos.setearConsulta(consulta);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+
+                    Articulo aux = new Articulo();
+
+                    aux.ID = (int)datos.Lector["Id"];
+                    aux.NombreArticulo = (string)datos.Lector["Nombre"];
+                    aux.CodArticulo = (string)datos.Lector["Codigo"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    if (!(datos.Lector["ImagenUrl"] is DBNull))
+                        aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+                    aux.Marca = new Marca();
+                    aux.Marca.IDMarca = (int)datos.Lector["IdMarca"];
+                    aux.Marca.NombreMarca = (string)datos.Lector["Marca"];
+                    aux.Categoria = new Categoria();
+                    aux.Categoria.IDCategoria = (int)datos.Lector["IdCategoria"];
+                    aux.Categoria.NombreCategoria = (string)datos.Lector["Categoria"];
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }
