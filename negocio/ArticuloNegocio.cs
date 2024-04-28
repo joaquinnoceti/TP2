@@ -98,7 +98,7 @@ namespace negocio
 
                 datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo,ImagenUrl) VALUES (@IdArticulo,@ImagenUrl)");
                 datos.setearParametros("@IdArticulo", art.ID);
-                datos.setearParametros("@Codigo", art.ImagenUrl);
+                datos.setearParametros("@ImagenUrl", art.ImagenUrl);
 
             }
             catch (Exception ex)

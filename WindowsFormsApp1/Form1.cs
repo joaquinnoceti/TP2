@@ -19,7 +19,6 @@ namespace WindowsFormsApp1
             Text = "Principal";
         }
 
-
         private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             foreach (var item in Application.OpenForms)
