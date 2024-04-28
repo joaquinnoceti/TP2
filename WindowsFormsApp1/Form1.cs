@@ -19,45 +19,6 @@ namespace WindowsFormsApp1
             Text = "Principal";
         }
 
-        private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            foreach(var item in Application.OpenForms)
-            {
-                if (item.GetType() == typeof(AgregarElemento))
-                    return;
-            }
-
-           AgregarElemento ventana = new AgregarElemento();
-           ventana.ShowDialog();
-        }
-
-        private void listarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            foreach (var item in Application.OpenForms)
-            {
-                if (item.GetType() == typeof(ListarArticulo))
-                    return;
-            }
-
-            ListarArticulo ventana = new ListarArticulo();
-            
-            ventana.ShowDialog();
-        }
-
-        private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -71,9 +32,17 @@ namespace WindowsFormsApp1
             ventana.ShowDialog();
         }
 
-        private void verToolStripMenuItem_Click(object sender, EventArgs e)
+        private void administrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(ListarArticulo))
+                    return;
+            }
 
+            ListarArticulo ventana = new ListarArticulo();
+
+            ventana.ShowDialog();
         }
     }
 }

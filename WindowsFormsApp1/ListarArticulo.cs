@@ -74,7 +74,7 @@ namespace WindowsFormsApp1
             catch (Exception ex)
             {
 
-                pbArticulo.Load("https://www.shutterstock.com/image-vector/ui-image-placeholder-wireframes-apps-260nw-1037719204.jpg");
+                pbArticulo.Load("https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png");
             }
         }
 
@@ -221,6 +221,20 @@ namespace WindowsFormsApp1
             dgvListArticulos.DataSource = null;
             dgvListArticulos.DataSource = listaFiltrada;
             ocultarColumnas();
+        }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dgvListArticulos.CurrentRow;
+            if (row != null)
+            {
+                Articulo seleccionado;
+                seleccionado = (Articulo)dgvListArticulos.CurrentRow.DataBoundItem;
+
+                frmDetalle detalle = new frmDetalle(seleccionado);
+                detalle.ShowDialog();
+
+            }
         }
     }
 }
