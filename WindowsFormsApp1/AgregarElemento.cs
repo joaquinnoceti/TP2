@@ -76,9 +76,8 @@ namespace WindowsFormsApp1
             ArticuloNegocio negocio = new ArticuloNegocio();
 
             if (txtCodArt.Text == "" || txtNombreArt.Text == "" || txtDescripcion.Text == "" || txtPrecio.Text == "")
-            {
                 validarTxts();
-            }
+            
             else
             {
                 try
@@ -104,7 +103,9 @@ namespace WindowsFormsApp1
                     else
                     {
                         negocio.agregar(art);
+                        //  string id = negocio.RecuperarIDArt(art.CodArticulo);
                         negocio.agregarImagen(art);
+                        //  negocio.agregarImagen(id,art.ImagenUrl);
                         MessageBox.Show("Agregado correctamente");
 
                     }

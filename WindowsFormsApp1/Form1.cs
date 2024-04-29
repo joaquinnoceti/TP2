@@ -43,5 +43,18 @@ namespace WindowsFormsApp1
 
             ventana.ShowDialog();
         }
+
+        private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(frmMarcas))
+                    return;
+            }
+
+            frmMarcas ventana = new frmMarcas();
+
+            ventana.ShowDialog();
+        }
     }
 }

@@ -89,6 +89,29 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+        //public string RecuperarIDArt(string codigo)
+        //{
+        //    AccesoDatos datos = new AccesoDatos();
+        //    try
+        //    {
+        //        //datos.setearConsulta("SELECT ID FROM ARTICULOS WHERE CODIGO = @CodigoArt");
+        //        //datos.setearParametros("@CodigoArt", codigo);
+        //        //string idArt = datos.EjecutaScalar();
+
+        //        //SqlCommand cmd = new SqlCommand("SELECT ID FROM ARTICULOS WHERE CODIGO = @CodigoArt");
+        //        //cmd.Parameters.AddWithValue("@CodigoArt", codigo);
+        //        //string idArt = (string)cmd.ExecuteScalar();
+
+        //        return idArt;
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        throw;
+        //    }
+           
+        //}
+
 
         public void agregarImagen(Articulo art)
         {

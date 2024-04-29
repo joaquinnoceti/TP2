@@ -12,25 +12,25 @@ using negocio;
 
 namespace WindowsFormsApp1
 {
-    public partial class AgregarCategoria : Form
+    public partial class frmMarcas : Form
     {
-        private List<Categoria> lista;
-        public AgregarCategoria()
+        private List<Marca> lista;
+        public frmMarcas()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Categoria cat = new Categoria();
-            CategoriaNegocio negocio = new CategoriaNegocio();
+            Marca marca = new Marca();
+            MarcaNegocio negocio = new MarcaNegocio();
 
-            if (txtCatDesc.Text != "")
+            if (txtMarcaDesc.Text != "")
             {
                 try
                 {
-                    cat.NombreCategoria = txtCatDesc.Text;
-                    negocio.agregar(cat);
+                    marca.NombreMarca = txtMarcaDesc.Text;
+                    negocio.agregar(marca);
                     MessageBox.Show("Agregado correctamente");
                     cargar();
 
@@ -45,27 +45,21 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Completar el campo");
             }
-            
-            
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
         }
 
-        private void AgregarCategoria_Load(object sender, EventArgs e)
+        private void frmMarcas_Load(object sender, EventArgs e)
         {
             cargar();
         }
 
         private void cargar()
         {
-            CategoriaNegocio negocio = new CategoriaNegocio();
+            MarcaNegocio negocio = new MarcaNegocio();
             try
             {
-                lista = negocio.listarCategorias();
-                dgvCategoria.DataSource = lista;
+                lista = negocio.listarMarcas();
+                dgvMarcas.DataSource = lista;
             }
             catch (Exception ex)
             {
@@ -74,32 +68,17 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void dgvCategoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Eliminar_Click(object sender, EventArgs e)
-        {
-            CategoriaNegocio negocio = new CategoriaNegocio();
-            Categoria seleccionado = (Categoria)dgvCategoria.CurrentRow.DataBoundItem;
+            MarcaNegocio negocio = new MarcaNegocio();
+            Marca seleccionado = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
             try
             {
                 DialogResult respuesta = MessageBox.Show("Seguro desea elimiar la marca?", "Eliminar", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                 if (respuesta == DialogResult.OK)
                 {
                     negocio.eliminar(seleccionado);
-                    MessageBox.Show("Categoria eliminada");
+                    MessageBox.Show("Marca eliminada");
                     cargar();
                 }
             }
@@ -108,5 +87,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        
     }
 }
